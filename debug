@@ -1,0 +1,31 @@
+global w
+def debug():
+    global g
+    print("debug woo")
+    print("1 Money")
+    print("2 Force RNG Seed")
+    print("3 Force Health")
+    print("4 Quit")
+    print("5 CMD")
+    e = False
+    while not e:
+        ax = input(">")
+        ax = ax.split(" ")
+        ax[0] = int(ax[0])
+        if(ax[0] == 1):
+            g.cash = float(ax[1])
+        elif(ax[0] == 2):
+            random.seed(int(ax[1]))
+        elif(ax[0] == 3):
+            g.health = int(ax[1])
+        elif(ax[0] == 4):
+            break
+        elif(ax[0] == 5):
+            bx = ""
+            for i in ax[1:]:
+                bx = bx + i + " "
+            exec(bx)
+        else:
+            g.error("INVALID DEBUG COMMAND")
+
+debug()

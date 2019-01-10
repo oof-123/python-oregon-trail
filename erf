@@ -1,0 +1,7 @@
+global enableRemovedFeatures
+print("WARNING: These features (usually) break important stuff.")
+if(input("Are you sure (yes/no)") == "yes"):
+    enableRemovedFeatures = True
+else:
+    print("You didn't type \"yes\", so you can't continue.")
+    enableRemovedFeatures = False
